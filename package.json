@@ -9,8 +9,7 @@
     "build:dev": "webpack --config ./webpack-config/webpack.config.js",
     "build:prod": "webpack --config ./webpack-config/webpack.config.js",
     "lint": "standard --fix",
-    "git:cz": "cz",
-    "prepare": "husky install"
+    "git:cz": "cz"
   },
   "keywords": [],
   "author": "",
@@ -31,7 +30,6 @@
     "css-loader": "^6.7.3",
     "cz-conventional-changelog": "^3.3.0",
     "html-webpack-plugin": "5.5.0",
-    "husky": "8.0.3",
     "mini-css-extract-plugin": "^2.7.5",
     "react-refresh": "^0.14.0",
     "standard": "^17.0.0",
@@ -44,11 +42,6 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
     }
   }
 }
