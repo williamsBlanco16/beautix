@@ -1,1 +1,1 @@
-export const App = () => <h1>Beautix</h1>
+export const App = () => <h1> Beautix </h1>

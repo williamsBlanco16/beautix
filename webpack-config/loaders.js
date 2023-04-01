@@ -1,5 +1,5 @@
 const { isProduction } = require('./keys')
-const MiniCssExtractPluginLoader = require("mini-css-extract-plugin").loader
+const MiniCssExtractPluginLoader = require('mini-css-extract-plugin').loader
 
 const babelRule = {
   test: /\.(js|jsx)$/i,
@@ -8,7 +8,7 @@ const babelRule = {
     loader: 'babel-loader',
     options: {
       presets: [
-        "@babel/preset-env",
+        '@babel/preset-env'
       ]
     }
   }
@@ -18,13 +18,13 @@ const cssRule = {
   test: /\.css/i,
   use: [
     MiniCssExtractPluginLoader,
-    "css-loader"
+    'css-loader'
   ]
 }
 
 const imagesRule = {
   test: /\.(png|svg|jpg|jpeg|gif)$/i,
-  type: 'asset/resource',
+  type: 'asset/resource'
 }
 const fastRefresh = {
   test: /\.[jt]sx?$/,
@@ -33,10 +33,10 @@ const fastRefresh = {
     {
       loader: require.resolve('babel-loader'),
       options: {
-        plugins: [!isProduction && require.resolve('react-refresh/babel')].filter(Boolean),
-      },
-    },
-  ],
+        plugins: [!isProduction && require.resolve('react-refresh/babel')].filter(Boolean)
+      }
+    }
+  ]
 }
 module.exports = [
   babelRule,
