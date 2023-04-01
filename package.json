@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo does not have test",
     "start": "webpack serve --config ./webpack-config/webpack.config.js",
     "build:dev": "webpack --config ./webpack-config/webpack.config.js",
     "build:prod": "webpack --config ./webpack-config/webpack.config.js",
     "lint": "standard --fix",
-    "git:cz": "cz"
+    "git:cz": "cz",
+    "pre-commit": "yarn lint && yarn test",
+    "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
   },
   "keywords": [],
   "author": "",
