@@ -11,7 +11,8 @@
     "lint": "standard --fix",
     "git:cz": "cz",
     "pre-commit": "yarn lint && yarn test",
-    "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true",
+    "release": "standard-version"
   },
   "keywords": [],
   "author": "",
@@ -31,10 +32,13 @@
     "commitizen": "4.3.0",
     "css-loader": "^6.7.3",
     "cz-conventional-changelog": "^3.3.0",
+    "gitmojis": "3.13.4",
     "html-webpack-plugin": "5.5.0",
+    "husky": "8.0.3",
     "mini-css-extract-plugin": "^2.7.5",
     "react-refresh": "^0.14.0",
     "standard": "^17.0.0",
+    "standard-version": "9.5.0",
     "terser-webpack-plugin": "^5.3.7",
     "webpack-dev-server": "4.13.1"
   },
