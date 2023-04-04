@@ -1,7 +1,8 @@
 import { ReduxProvider } from '../redux'
+import { Router } from '../router'
 
 export const App = () => (
   <ReduxProvider>
-    <h1> Beautix </h1>
+    <Router />
   </ReduxProvider>
 )
