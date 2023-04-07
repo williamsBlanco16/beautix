@@ -1,4 +1,4 @@
-const { isProduction } = require('./keys')
+const { isProduction } = require('./util')
 const MiniCssExtractPluginLoader = require('mini-css-extract-plugin').loader
 
 const babelRule = {

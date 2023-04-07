@@ -1,3 +1,5 @@
 node_modules
 dist
 public
+env-config/.env.development
+env-config/.env.production
