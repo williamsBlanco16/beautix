@@ -16,7 +16,8 @@ const dotenvPlugin = () => {
   logFileExist(filePath)
 
   return new Dotenv({
-    path: filePath
+    path: filePath,
+    systemvars: true
   })
 }
 module.exports = [
