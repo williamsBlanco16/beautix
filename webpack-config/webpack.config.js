@@ -3,10 +3,9 @@ const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
 const rules = require('./loaders')
 const plugins = require('./plugins')
-const { mode, isProduction } = require('./util')
+const { isProduction } = require('./util')
 
 module.exports = {
-  mode,
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, '../', 'dist'),
@@ -23,7 +22,7 @@ module.exports = {
     open: true,
     historyApiFallback: true,
     proxy: {
-      '/sentry': 'http://localhost:3000/sentry'
+      '/sentry': process.env.TUNNEL_SENTRY
     }
 
   },
@@ -33,5 +32,6 @@ module.exports = {
     minimizer: [
       new TerserPlugin()
     ]
-  }
+  },
+  devtool: isProduction ? '' : 'eval-cheap-module-source-map'
 }

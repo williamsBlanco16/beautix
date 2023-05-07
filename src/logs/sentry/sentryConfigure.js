@@ -3,10 +3,10 @@ import { getEnviroment, getReactAppVersion } from '../../commons/common.core'
 
 export const loggerInit = () => {
   Sentry.init({
-    dsn: 'https://722cecd1220041c0a472e2718a5906c9@o4504968963555328.ingest.sentry.io/4504969359917056',
+    dsn: process.env.DSN_SENTRY,
     enviroment: getEnviroment(),
     release: getReactAppVersion(),
-    tunnel: 'http://localhost:3000/sentry',
+    tunnel: process.env.TUNNEL_SENTRY,
     integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
     // Performance Monitoring
     tracesSampleRate: 1.0, // Capture 100% of the transactions, reduce in production!
