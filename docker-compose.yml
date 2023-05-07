@@ -1,0 +1,24 @@
+#this file use ./.env file for sensitive data
+version: "2"
+services:
+  tunnel-sentry:
+    build: ../tunnel-sentry
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - DOCKER_ENV=true
+      - SENTRY_HOST=$SENTRY_HOST
+      - PROJECT_IDS=$PROJECT_IDS
+      - CORS_ORIGIN=$CORS_ORIGIN
+      - PORT=3001
+    restart: always
+  beautix-web:
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - tunnel-sentry
+    restart: always
